@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CronosSysten</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <style>
-      :root {
-        --titulos: #111826;
-        --subtitulos: #012841;
-        --fundos: #1e1f1f55;
-        --botao: #00657c;
-      }
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="dashboard.css" />
 
+    <style>
+    :root {
+        --azul-escuro: #012841;
+        --azul-claro: #00657c;
+        --cinza-escuro: #212529;
+      }
+    
       * {
         margin: 0px;
         padding: 0px;
@@ -21,41 +21,59 @@
         text-decoration: none;
         font-size: 13px;
       }
+    
+      /* Estilos para #conteiner-geral */
       #conteiner-geral {
         background-color: rgb(185, 193, 201);
         width: 100%;
         height: 100vh;
       }
-
+    
+      /* Estilos para #flex-1 */
+      #flex-1 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+      }
+    
+      /* Estilos para #menu-geral */
       #menu-geral {
         width: 17%;
         min-width: 200px;
         height: 100vh;
-        background-color: #212529;
+        background-color: var(--cinza-escuro);
       }
-
+    
+      /* Estilos para #topo-menu */
       #topo-menu {
         width: 100%;
         height: 08%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        border-bottom: 1px solid var(--botao);
+        border-bottom: 1px solid var(--azul-claro);
       }
-
-      #topo-menu img{
-        width: 50px;
+    
+      #topo-menu img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
       }
-
+    
+      #topo-menu p {
+        color: white;
+      }
+    
+      /* Estilos para #links-menu */
       #links-menu {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 92%;
-
         align-items: center;
       }
-
+    
       #links-menu a {
         display: flex;
         align-items: center;
@@ -66,22 +84,27 @@
         margin-bottom: 2px;
       }
 
-      #links-menu a span{
-        padding-left: 10px;
-      }
-
-      #flex-1 {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-      }
-
+    
+    
+      /* Estilos para #ajuste-2 */
       #ajuste-2 {
         width: 100%;
         height: 100%;
       }
+    
+      /* Estilos para nav */
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 08%;
+        background-color: white;
+      }
+    
 
+    
+      /* Estilos para #ajuste-3 */
       #ajuste-3 {
         display: flex;
         align-items: center;
@@ -89,31 +112,8 @@
         width: 100%;
         height: 92%;
       }
-
-      nav {
-        
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        height: 08%;
-        background-color: white;
-        
-      }
-
-      nav #usuario{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 180px;
-        height: 100%;
-        border-left: 1px solid var(--botao);
-        background-color: rgba(194, 202, 210, 0.36);
-        font-size: 14px;
-        background-color: #182e43fe;
-        color: white;
-        border-radius: 15px 0px 0px 15px;
-      }
-
+    
+      /* Estilos para #conteudo */
       #conteudo {
         border: 1px solid white;
         width: 98%;
@@ -121,69 +121,84 @@
         border-radius: 5px;
         background-color: white;
       }
-
-      
-      
     </style>
+    
   </head>
   <body>
     <div id="conteiner-geral">
       <div id="flex-1">
         <div id="menu-geral">
-          <div id="topo-menu"><img src="logo.png" alt=""></div>
-          <!--topo-menu-->
-          <div id="links-menu">
-            <a  href="#"><i class="fi fi-rr-home"></i> <span>Home</span></a>
-            <a style="background-color: var(--botao)" href="#"> <i class="fi fi-ts-overview"></i><span>Dashbord</span></a>
-            <a href="#">Consultas</a>
-            <a href="#">Agenda</a>
-            <a href="#">Medicos</a>
-            <a href="#">Sair</a>
-          </div> <!--links-menu-->
+          <div id="topo-menu">
+            &nbsp;&nbsp;&nbsp;
+            <img src="profile.jpg" alt="" />
+            &nbsp;&nbsp;&nbsp;
+            <p>Josué Lima</p>
+          </div> <!-- topo-menu -->
           
-        </div><!--menu-geral-->
-        
+          <div id="links-menu">
+            <a href="#">
+              <img width="10%" src="home.png" alt="">   &nbsp; Home
+            </a>
 
-          <div id="ajuste-2">
-            <nav>
-              <div id="usuario">
-                  Bem Vindo Josué Lima
-              </div><!--usuario-->
-            </nav>
-              <div id="ajuste-3">
-                <div id="conteudo">
-                    <div id="conteudo-pessoal">
+            <a style="background-color: var(--azul-claro)" href="#">
+              <img width="10%" src="dashboard.png" alt="">  &nbsp;Dashbord
+            </a>
 
-
-                      <div class="card">
-                        <span class="card-titulo">Consultas Marcadas</span>
-                        <span class="card-conteudo" >10</span>
-                      </div>
-
-                      <div class="card">
-                        <span class="card-titulo">Pacientes Ativos</span>
-                        <span class="card-conteudo" >65</span>
-                      </div>
-
-                      <div class="card">
-                        <span class="card-titulo">Exames Pendentes</span>
-                        <span class="card-conteudo" >36</span>
-                      </div>
-
-                      <div class="card">
-                        <span class="card-titulo">Consultas Canceladas</span>
-                        <span class="card-conteudo" >8</span>
-                      </div>
-
-                      
-                    </div>
-                </div><!--conteudo-->
-              </div><!--ajuste-3-->
-          </div><!--ajuste-2-->
-        
-      </div><!--flex-1-->
-      
-    </div> <!--conteiner-geral-->
-   
+            <a href="#">
+              <img width="10%" src="paciente.png" alt=""> &nbsp; Pacientes
+            </a>
+            
+            <a href="#">
+             <img width="10%" src="pesquisar.png" alt=""> &nbsp; Consultas
+            </a>
+  
+            <a href="#">
+              <img width="10%" src="agenda.png" alt=""> &nbsp; Agenda
+            </a>
+            <a href="#">
+              <img width="10%" src="medico.png" alt=""> &nbsp;  Medicos
+            </a>
+            <a href="#">
+              <img width="10%" src="logout.png" alt=""> &nbsp;  Sair
+            </a>
+          </div> <!-- links-menu -->
+        </div> <!-- menu-geral -->
+  
+        <div id="ajuste-2">
+          <nav>
+            <input style="width: 15%; height: 50%; border-radius: 08px; background-color: var(--cinza-escuro); color: white;border: none solid var(--azul-claro);" type="search" name="busca" id="busca" placeholder="Search" >
+            &nbsp;
+            <button style="width: 05%; height: 50%; border-radius: 08px; background-color: var(--azul-claro); color: white; border: none;" >Buscar</button>
+            &nbsp;
+          </nav>
+          <div id="ajuste-3">
+            <div id="conteudo">
+              <div id="conteudo-pessoal">
+                <div class="card">
+                  <span class="card-titulo"> <img width="8%" src="check.png" alt="">&nbsp; Consultas Marcadas</span>
+                  <span class="card-conteudo">10</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="usuario-ferido.png" alt="">&nbsp; Pacientes Ativos</span>
+                  <span class="card-conteudo">65</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="pendente.png" alt="">&nbsp; Exames Pendentes</span>
+                  <span class="card-conteudo">36</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="cancelado.png" alt="">&nbsp; Consultas Canceladas</span>
+                  <span class="card-conteudo">8</span>
+                </div> <!-- card -->
+              </div> <!-- conteudo-pessoal -->
+            </div> <!-- conteudo -->
+          </div> <!-- ajuste-3 -->
+        </div> <!-- ajuste-2 -->
+      </div> <!-- flex-1 -->
+    </div> <!-- conteiner-geral -->
   </body>
-</html>
+  </html>
+  
