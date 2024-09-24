@@ -14,7 +14,7 @@
     width: 230px;
     height: 130px;
     border-radius: 15px 0px 15px 0px;
-    background-color: rgba(212, 221, 230, 0.499);
+    background-color: #182e43fe;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.311);
 }
 
@@ -25,6 +25,7 @@
     width: 100%;
     height: 20%;
     border-bottom: 2px solid var(--botao);
+    color: white;
 
 }
 
@@ -35,5 +36,5 @@
     width: 100%;
     height: 80%;
     font-size: 18px;
-
+    color: white;
 }
