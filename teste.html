@@ -102,11 +102,7 @@
         background-color: white;
       }
 
-      nav a{
-        width: 25px;
-        height: 25px;
-        margin-right: 10px;
-      }
+
     
 
     
@@ -149,17 +145,15 @@ thead {
 }
 
 th, td {
-    padding: 16px;
+    padding: 10px;
     border-bottom: 1px solid #e0e0e0;
 }
 
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
+
 
 th {
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    
     font-size: 14px;
 }
 
@@ -167,9 +161,10 @@ td {
     color: #333;
 }
 
-.img{
-  width: 40px;
-  height: 40px;
+.ajuste-icone{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
   
 }
 
@@ -195,37 +190,37 @@ td {
           
           <div id="links-menu">
             <a href="#">
-              <img width="10%" src="home.png" alt="">   &nbsp; Home
+              <img class="ajuste-icone" src="home.png" alt="">   &nbsp; Home
             </a>
 
             <a style="background-color: var(--azul-claro)" href="#">
-              <img width="10%" src="dashboard.png" alt="">  &nbsp;Dashbord
+              <img class="ajuste-icone" src="dashboard.png" alt="">  &nbsp;Dashbord
             </a>
 
             <a href="#">
-              <img width="10%" src="paciente.png" alt=""> &nbsp; Pacientes
+              <img class="ajuste-icone" src="paciente.png" alt=""> &nbsp; Pacientes
             </a>
             
             <a href="#">
-             <img width="10%" src="pesquisar.png" alt=""> &nbsp; Consultas
+             <img class="ajuste-icone" src="pesquisar.png" alt=""> &nbsp; Consultas
             </a>
   
             <a href="#">
-              <img width="10%" src="agenda.png" alt=""> &nbsp; Agenda
+              <img class="ajuste-icone" src="agenda.png" alt=""> &nbsp; Agenda
             </a>
             <a href="#">
-              <img width="10%" src="medico.png" alt=""> &nbsp;  Medicos
+              <img class="ajuste-icone" src="medico.png" alt=""> &nbsp;  Medicos
             </a>
             <a href="#">
-              <img width="10%" src="logout.png" alt=""> &nbsp;  Sair
+              <img class="ajuste-icone" src="logout.png" alt=""> &nbsp;  Sair
             </a>
           </div> <!-- links-menu -->
         </div> <!-- menu-geral -->
   
         <div id="ajuste-2">
           <nav>
-            <a href="#"><img style="width: 100%; height: auto;" src="sino.png" alt=""></a>
-            <a href="#"><img style="width: 100%; height: auto;" src="config.png" alt=""></a>
+            <a href="#"><img class="ajuste-icone"  src="sino.png" alt=""></a>
+            <a href="#"><img class="ajuste-icone" src="config.png" alt=""></a>
         </nav>
           <div id="ajuste-3">
             <div id="conteudo">
@@ -238,7 +233,7 @@ td {
                             <th>Email</th>
                             <th>Telefone</th>
                             <th>Cidade</th>
-                            <th>X</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -247,25 +242,36 @@ td {
                             <td>maria.silva@example.com</td>
                             <td>(11) 98765-4321</td>
                             <td>São Paulo</td>
-                            <td class="img" ><img style="width: 100%; height: auto;" src="edit.png" alt=""></td>
+                            <td style="width: 25px;" >
+                              <a href="#"><img class="ajuste-icone"  src="editar.png" alt=""></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>João Pereira</td>
                             <td>joao.pereira@example.com</td>
                             <td>(21) 98765-1234</td>
                             <td>Rio de Janeiro</td>
+                            <td style="width: 25px;" >
+                              <a href="#"><img class="ajuste-icone"  src="editar.png" alt=""></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Ana Souza</td>
                             <td>ana.souza@example.com</td>
                             <td>(31) 91234-5678</td>
                             <td>Belo Horizonte</td>
+                            <td style="width: 25px;" >
+                              <a href="#"><img class="ajuste-icone"  src="editar.png" alt=""></a>
+                            </td>
                         </tr>
                         <tr>
                             <td>Lucas Oliveira</td>
                             <td>lucas.oliveira@example.com</td>
                             <td>(71) 99876-5432</td>
                             <td>Salvador</td>
+                            <td style="width: 25px;" >
+                              <a href="#"><img class="ajuste-icone"  src="editar.png" alt=""></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
