@@ -121,12 +121,64 @@
     
       /* Estilos para #conteudo */
       #conteudo {
-        border: 1px solid white;
+     
         width: 98%;
         height: 95%;
         border-radius: 5px;
         background-color: white;
       }
+
+
+
+      .table-container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #1d3557;
+    color: white;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+}
+
+td {
+    color: #333;
+}
+
+.img{
+  width: 40px;
+  height: 40px;
+  
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
     </style>
     
   </head>
@@ -178,9 +230,46 @@
           <div id="ajuste-3">
             <div id="conteudo">
              
-              <div id="conteudo-principal">
-                
-              </div>
+              <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Cidade</th>
+                            <th>X</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maria Silva</td>
+                            <td>maria.silva@example.com</td>
+                            <td>(11) 98765-4321</td>
+                            <td>São Paulo</td>
+                            <td class="img" ><img style="width: 100%; height: auto;" src="edit.png" alt=""></td>
+                        </tr>
+                        <tr>
+                            <td>João Pereira</td>
+                            <td>joao.pereira@example.com</td>
+                            <td>(21) 98765-1234</td>
+                            <td>Rio de Janeiro</td>
+                        </tr>
+                        <tr>
+                            <td>Ana Souza</td>
+                            <td>ana.souza@example.com</td>
+                            <td>(31) 91234-5678</td>
+                            <td>Belo Horizonte</td>
+                        </tr>
+                        <tr>
+                            <td>Lucas Oliveira</td>
+                            <td>lucas.oliveira@example.com</td>
+                            <td>(71) 99876-5432</td>
+                            <td>Salvador</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             </div> <!-- conteudo -->
           </div> <!-- ajuste-3 -->
