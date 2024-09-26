@@ -180,18 +180,31 @@ button.fechar {
     justify-content: space-between;
 }
 
+.form-group-1{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
     </style>
     
   </head>
   <body>
     <div id="conteiner-geral">
       <div id="flex-1">
+
+        
+
         <div id="menu-geral">
           <div id="topo-menu">
+            
             &nbsp;&nbsp;&nbsp;
-            <img src="profile.jpg" alt="" />
+            <img src="profile.jpg" alt=""/>
             &nbsp;&nbsp;&nbsp;
             <p>Josué Lima</p>
+            &nbsp;&nbsp;&nbsp;
+            <button class="toggle-btn" onclick="toggleMenu()">☰</button>
           </div> <!-- topo-menu -->
           
           <div id="links-menu">
@@ -239,9 +252,22 @@ button.fechar {
                         <input type="text" id="name" placeholder="Nome Completo"  >
                     </div>
 
-                    <div class="form-group">
-                      <label for="DataNascimento">Data Nascimento</label>
-                      <input style="width: 150px;" type="date" id="DataNascimento" placeholder="Data Nascimento">
+                    <div style="display: flex;" class="form-group">
+
+                      <div class="form-group-1">
+                        <label for="DataNascimento">Data Nascimento</label>
+                        <input style="width: 150px; padding-right: 30px;" type="date" id="DataNascimento" placeholder="Data Nascimento">
+                      </div>
+                        
+                      <div style="margin-left: 10px;" class="form-group-1">
+                        <label for="Medico">Medico Responsavel</label>
+                        <select style="width: 150px;" name="id" id="id">
+                          <option value="iu">oi</option>
+                          <option value="iu">oi51451</option>
+                          <option value="iu">o5151i</option>
+                          <option value="iu">oi</option>
+                        </select>
+                      </div>
                   </div>   
 
                     <div class="form-group">
@@ -284,5 +310,12 @@ button.fechar {
       </div> <!-- flex-1 -->
     </div> <!-- conteiner-geral -->
   </body>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu-geral').classList.toggle('reduzido');
+    }
+  </script>
+
   </html>
   
