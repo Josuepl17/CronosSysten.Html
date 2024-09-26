@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CronosSysten</title>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
     <link rel="stylesheet" href="dashboard.css" />
 
     <style>
-    :root {
+      :root {
         --azul-escuro: #012841;
         --azul-claro: #00657c;
         --cinza-escuro: #212529;
       }
-    
+
       * {
         margin: 0px;
         padding: 0px;
@@ -21,229 +21,241 @@
         text-decoration: none;
         font-size: 13px;
       }
-    
-      /* Estilos para #conteiner-geral */
+
       #conteiner-geral {
         background-color: rgb(185, 193, 201);
         width: 100%;
         height: 100vh;
       }
-    
-      /* Estilos para #flex-1 */
+
       #flex-1 {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 100%;
       }
-    
-      /* Estilos para #menu-geral */
+
+      /* Menu */
       #menu-geral {
-        width: 17%;
-        min-width: 200px;
+        width: 200px;
         height: 100vh;
         background-color: var(--cinza-escuro);
+        transition: width 0.3s ease;
       }
-    
-      /* Estilos para #topo-menu */
+
+      #menu-geral.reduzido {
+        width: 60px;
+      }
+
       #topo-menu {
+        display: flex;
         width: 100%;
         height: 08%;
-        display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 10px;
         border-bottom: 1px solid var(--azul-claro);
       }
-    
+
       #topo-menu img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
       }
-    
+
       #topo-menu p {
         color: white;
+        margin-left: 10px;
+        transition: opacity 0.3s ease;
       }
-    
-      /* Estilos para #links-menu */
+
+      #menu-geral.reduzido #topo-menu p {
+        opacity: 0;
+        visibility: hidden;
+      }
+
       #links-menu {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 92%;
-        align-items: center;
+        padding: 10px;
       }
-    
+
       #links-menu a {
         display: flex;
         align-items: center;
-        width: 95%;
         padding: 10px;
         color: aliceblue;
         border-radius: 7px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        transition: background-color 0.2s;
       }
 
-    
-    
-      /* Estilos para #ajuste-2 */
-      #ajuste-2 {
-        width: 100%;
-        height: 100%;
+      #links-menu a:hover {
+        background-color: var(--azul-claro);
       }
-    
-      /* Estilos para nav */
+
+      .ajuste-icone {
+        width: 20px;
+        height: 20px;
+      }
+
+      #links-menu a span {
+        margin-left: 10px;
+        transition: opacity 0.3s ease;
+      }
+
+      #menu-geral.reduzido #links-menu a span {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* Conteúdo */
+      #ajuste-2 {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
       nav {
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
         width: 100%;
         height: 08%;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
         background-color: white;
       }
 
-      .ajuste-icone{
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  
-}
-
-    
-      /* Estilos para #ajuste-3 */
       #ajuste-3 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 92%;
+        flex-grow: 1;
       }
-    
-      /* Estilos para #conteudo */
+
       #conteudo {
-     display: flex;
+        display: flex;
         width: 98%;
         height: 95%;
         border-radius: 5px;
         background-color: white;
+        padding: 20px;
       }
 
+      /* Botão de Toggle */
+      .toggle-btn {
+        background-color: var(--azul-claro);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      /* Estilos do formulário */
       .fomulario-usuario {
         width: 100%;
         background: #fff;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-       }
+      }
 
+      .form-group {
+        margin-bottom: 10px;
+      }
 
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
 
-.form-group {
-    margin-bottom: 10px;
-}
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+      button {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-input[type="text"], input[type="email"], input[type="date"], input[type="password"], select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-   
-    
-}
+      button.salvar {
+        background-color: #4caf50;
+      }
 
-button {
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+      button.fechar {
+        background-color: #9d9d9d;
+      }
 
+      .fechar-salvar {
+        display: flex;
+        justify-content: space-between;
+      }
 
-button.salvar {
-    background-color: #4caf50;
-}
-
-button.fechar {
-    background-color: #9d9d9d;
-}
-
-
-.fechar-salvar {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form-group-1{
-  display: flex;
-  flex-direction: column;
-}
-
-
-
+      .form-group-1 {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
-    
   </head>
   <body>
     <div id="conteiner-geral">
+      
+
       <div id="flex-1">
-
-        
-
         <div id="menu-geral">
           <div id="topo-menu">
-            
-            &nbsp;&nbsp;&nbsp;
-            <img src="profile.jpg" alt=""/>
-            &nbsp;&nbsp;&nbsp;
-            <p>Josué Lima</p>
-            &nbsp;&nbsp;&nbsp;
+            <div style="display: flex; flex-direction: row; align-items: center;" >
+              <img src="profile.jpg" alt="" />
+              <p>Josué Lima</p>
+            </div>
             <button class="toggle-btn" onclick="toggleMenu()">☰</button>
           </div> <!-- topo-menu -->
-          
+
           <div id="links-menu">
             <a href="#">
-              <img class="ajuste-icone" src="home.png" alt="">   &nbsp; Home
+              <img class="ajuste-icone" src="home.png" alt="" /> <span>Home</span>
             </a>
-
             <a style="background-color: var(--azul-claro)" href="#">
-              <img class="ajuste-icone" src="dashboard.png" alt="">  &nbsp;Dashbord
-            </a>
-
-            <a href="#">
-              <img class="ajuste-icone" src="paciente.png" alt=""> &nbsp; Pacientes
-            </a>
-            
-            <a href="#">
-             <img class="ajuste-icone" src="pesquisar.png" alt=""> &nbsp; Consultas
-            </a>
-  
-            <a href="#">
-              <img class="ajuste-icone" src="agenda.png" alt=""> &nbsp; Agenda
+              <img class="ajuste-icone" src="dashboard.png" alt="" /> <span>Dashboard</span>
             </a>
             <a href="#">
-              <img class="ajuste-icone" src="medico.png" alt=""> &nbsp;  Medicos
+              <img class="ajuste-icone" src="paciente.png" alt="" /> <span>Pacientes</span>
             </a>
             <a href="#">
-              <img class="ajuste-icone" src="logout.png" alt=""> &nbsp;  Sair
+              <img class="ajuste-icone" src="pesquisar.png" alt="" /> <span>Consultas</span>
+            </a>
+            <a href="#">
+              <img class="ajuste-icone" src="agenda.png" alt="" /> <span>Agenda</span>
+            </a>
+            <a href="#">
+              <img class="ajuste-icone" src="medico.png" alt="" /> <span>Médicos</span>
+            </a>
+            <a href="#">
+              <img class="ajuste-icone" src="logout.png" alt="" /> <span>Sair</span>
             </a>
           </div> <!-- links-menu -->
         </div> <!-- menu-geral -->
-  
+
         <div id="ajuste-2">
           <nav>
-              <a href="#"><img class="ajuste-icone"  src="sino.png" alt=""></a>
-              <a href="#"><img class="ajuste-icone" src="config.png" alt=""></a>
-        </nav>
+            <a href="#"><img class="ajuste-icone" src="sino.png" alt="" /></a>
+            <a href="#"><img class="ajuste-icone" src="config.png" alt="" /></a>
+          </nav>
           <div id="ajuste-3">
             <div id="conteudo">
-             
               <div class="fomulario-usuario">
                 <form>
         
@@ -299,23 +311,35 @@ button.fechar {
                     <div class="fechar-salvar">
                         <button type="button" class="fechar">Fechar</button>
                         <button type="submit" class="salvar">Salvar</button>
+
                     </div>
                 </form>
             </div>
-            
-
             </div> <!-- conteudo -->
           </div> <!-- ajuste-3 -->
         </div> <!-- ajuste-2 -->
       </div> <!-- flex-1 -->
     </div> <!-- conteiner-geral -->
-  </body>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu-geral').classList.toggle('reduzido');
+    <script>
+function toggleMenu() {
+    const menu = document.getElementById('menu-geral');
+    menu.classList.toggle('reduzido');
+
+    // Obtenha o botão de alternância
+    const toggleButton = document.querySelector('.toggle-btn');
+
+    // Verifique se o menu está reduzido
+    const isReduced = menu.classList.contains('reduzido');
+
+    if (isReduced) {
+        toggleButton.innerHTML = '▶'; // Muda o ícone do botão quando o menu está retraído
+        toggleButton.style.marginLeft = '-30px'; // Adiciona a margem direita
+    } else {
+        toggleButton.innerHTML = '☰'; // Restaura o ícone original quando o menu está expandido
+   
     }
-  </script>
-
-  </html>
-  
+}
+    </script>
+  </body>
+</html>
