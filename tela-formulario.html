@@ -144,8 +144,8 @@
         padding: 20px;
       }
 
-      /* Botão de Toggle */
-      .toggle-btn {
+
+      .botao-menu {
         background-color: var(--azul-claro);
         color: white;
         border: none;
@@ -221,7 +221,7 @@
               <img src="profile.jpg" alt="" />
               <p>Josué Lima</p>
             </div>
-            <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+            <button class="botao-menu" onclick="toggleMenu()">☰</button>
           </div> <!-- topo-menu -->
 
           <div id="links-menu">
@@ -258,7 +258,6 @@
             <div id="conteudo">
               <div class="fomulario-usuario">
                 <form>
-        
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
                         <input type="text" id="name" placeholder="Nome Completo"  >
@@ -327,7 +326,7 @@ function toggleMenu() {
     menu.classList.toggle('reduzido');
 
     // Obtenha o botão de alternância
-    const toggleButton = document.querySelector('.toggle-btn');
+    const toggleButton = document.querySelector('.botao-menu');
 
     // Verifique se o menu está reduzido
     const isReduced = menu.classList.contains('reduzido');

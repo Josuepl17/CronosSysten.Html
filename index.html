@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CronosSysten</title>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css" />
     <link rel="stylesheet" href="dashboard.css" />
 
     <style>
-    :root {
+      :root {
         --azul-escuro: #012841;
         --azul-claro: #00657c;
         --cinza-escuro: #212529;
       }
-    
+
       * {
         margin: 0px;
         padding: 0px;
@@ -21,188 +21,250 @@
         text-decoration: none;
         font-size: 13px;
       }
-    
-      /* Estilos para #conteiner-geral */
+
       #conteiner-geral {
         background-color: rgb(185, 193, 201);
         width: 100%;
         height: 100vh;
       }
-    
-      /* Estilos para #flex-1 */
+
       #flex-1 {
         display: flex;
         flex-direction: row;
         width: 100%;
         height: 100%;
       }
-    
-      /* Estilos para #menu-geral */
+
+      /* Menu */
       #menu-geral {
-        width: 17%;
-        min-width: 200px;
+        width: 200px;
         height: 100vh;
         background-color: var(--cinza-escuro);
+        transition: width 0.3s ease;
+
       }
-    
-      /* Estilos para #topo-menu */
+
+      #menu-geral.reduzido {
+        width: 60px;
+      }
+
       #topo-menu {
+        display: flex;
         width: 100%;
         height: 08%;
-        display: flex;
         align-items: center;
+        justify-content: space-between;
+        padding: 10px;
         border-bottom: 1px solid var(--azul-claro);
       }
-    
+
       #topo-menu img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
       }
-    
+
       #topo-menu p {
         color: white;
+        margin-left: 10px;
+        transition: opacity 0.3s ease;
       }
-    
-      /* Estilos para #links-menu */
+
+      #menu-geral.reduzido #topo-menu p {
+        opacity: 0;
+        visibility: hidden;
+      }
+
       #links-menu {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 92%;
-        align-items: center;
+        padding: 10px;
       }
-    
+
       #links-menu a {
         display: flex;
         align-items: center;
-        width: 95%;
-        padding: 10px;
+        padding: 10px; 
         color: aliceblue;
         border-radius: 7px;
-        margin-bottom: 2px;
+        margin-bottom: 5px;
+        
       }
 
-    
-    
-      /* Estilos para #ajuste-2 */
-      #ajuste-2 {
-        width: 100%;
-        height: 100%;
+      #links-menu a:hover {
+        background-color: var(--azul-claro);
+        transition: background-color 0.3s;
       }
-    
-      /* Estilos para nav */
+
+      #links-menu a img {
+        width: 20px;
+        height: 20px;
+      }
+
+      #links-menu a span {
+        margin-left: 10px;
+        transition: opacity 0.3s ease;
+      }
+
+      #menu-geral.reduzido #links-menu a span {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* Conteúdo */
+      #ajuste-2 {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
       nav {
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
         width: 100%;
         height: 08%;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
         background-color: white;
       }
 
-      nav a{
+      nav a img{
         width: 25px;
         height: 25px;
         margin-right: 10px;
       }
-    
 
-    
-      /* Estilos para #ajuste-3 */
       #ajuste-3 {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 92%;
+        flex-grow: 1;
       }
-    
-      /* Estilos para #conteudo */
+
       #conteudo {
-        border: 1px solid white;
+        display: flex;
         width: 98%;
         height: 95%;
         border-radius: 5px;
         background-color: white;
+        padding: 20px;
       }
+
+
+      .botao-menu {
+        background-color: var(--azul-claro);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+
     </style>
-    
   </head>
   <body>
     <div id="conteiner-geral">
+      
+
       <div id="flex-1">
         <div id="menu-geral">
           <div id="topo-menu">
-            &nbsp;&nbsp;&nbsp;
-            <img src="profile.jpg" alt="" />
-            &nbsp;&nbsp;&nbsp;
-            <p>Josué Lima</p>
+            <div style="display: flex; flex-direction: row; align-items: center;" >
+              <img src="imagens/profile.jpg" alt="" />
+              <p>Josué Lima</p>
+            </div>
+            <button class="botao-menu" onclick="toggleMenu()">☰</button>
           </div> <!-- topo-menu -->
-          
+
           <div id="links-menu">
             <a href="#">
-              <img width="10%" src="home.png" alt="">   &nbsp; Home
+              <img  src="imagens/home.png" alt="" /> <span>Home</span>
             </a>
-
             <a style="background-color: var(--azul-claro)" href="#">
-              <img width="10%" src="dashboard.png" alt="">  &nbsp;Dashbord
-            </a>
-
-            <a href="#">
-              <img width="10%" src="paciente.png" alt=""> &nbsp; Pacientes
-            </a>
-            
-            <a href="#">
-             <img width="10%" src="pesquisar.png" alt=""> &nbsp; Consultas
-            </a>
-  
-            <a href="#">
-              <img width="10%" src="agenda.png" alt=""> &nbsp; Agenda
+              <img  src="imagens/dashboard.png" alt="" /> <span>Dashboard</span>
             </a>
             <a href="#">
-              <img width="10%" src="medico.png" alt=""> &nbsp;  Medicos
+              <img  src="imagens/paciente.png" alt="" /> <span>Pacientes</span>
             </a>
             <a href="#">
-              <img width="10%" src="logout.png" alt=""> &nbsp;  Sair
+              <img  src="imagens/pesquisar.png" alt="" /> <span>Consultas</span>
+            </a>
+            <a href="#">
+              <img  src="imagens/agenda.png" alt="" /> <span>Agenda</span>
+            </a>
+            <a href="#">
+              <img  src="imagens/medico.png" alt="" /> <span>Médicos</span>
+            </a>
+            <a href="#">
+              <img  src="imagens/logout.png" alt="" /> <span>Sair</span>
             </a>
           </div> <!-- links-menu -->
         </div> <!-- menu-geral -->
-  
+
         <div id="ajuste-2">
           <nav>
-            <a href="#"><img style="width: 100%; height: auto;" src="sino.png" alt=""></a>
-            <a href="#"><img style="width: 100%; height: auto;" src="config.png" alt=""></a>
-        </nav>
+            <a href="#"><img  src="imagens/sino.png" alt="" /></a>
+            <a href="#"><img  src="imagens/config.png" alt="" /></a>
+          </nav>
           <div id="ajuste-3">
             <div id="conteudo">
-              <div id="conteudo-pessoal">
-                <div class="card">
-                  <span class="card-titulo"> <img width="8%" src="check.png" alt="">&nbsp; Consultas Marcadas</span>
-                  <span class="card-conteudo">10</span>
-                </div> <!-- card -->
-  
-                <div class="card">
-                  <span class="card-titulo"><img width="8%" src="usuario-ferido.png" alt="">&nbsp; Pacientes Ativos</span>
-                  <span class="card-conteudo">65</span>
-                </div> <!-- card -->
-  
-                <div class="card">
-                  <span class="card-titulo"><img width="8%" src="pendente.png" alt="">&nbsp; Exames Pendentes</span>
-                  <span class="card-conteudo">36</span>
-                </div> <!-- card -->
-  
-                <div class="card">
-                  <span class="card-titulo"><img width="8%" src="cancelado.png" alt="">&nbsp; Consultas Canceladas</span>
-                  <span class="card-conteudo">8</span>
-                </div> <!-- card -->
-              </div> <!-- conteudo-pessoal -->
+              
+
+
+
+
+
+
+
+
+
+
+
+
             </div> <!-- conteudo -->
           </div> <!-- ajuste-3 -->
         </div> <!-- ajuste-2 -->
       </div> <!-- flex-1 -->
     </div> <!-- conteiner-geral -->
+
+    <script>
+function toggleMenu() {
+    const menu = document.getElementById('menu-geral');
+    menu.classList.toggle('reduzido');
+
+    const toggleButton = document.querySelector('.botao-menu');
+    const isReduced = menu.classList.contains('reduzido');
+
+    if (isReduced) {
+        toggleButton.innerHTML = '▶';
+        toggleButton.style.marginLeft = '-30px';
+    } else {
+        toggleButton.innerHTML = '☰';
+    }
+}
+
+// Função para fechar o menu se a tela for menor que 600px
+function checkScreenWidth() {
+    const menu = document.getElementById('menu-geral');
+    const toggleButton = document.querySelector('.botao-menu');
+
+    if (window.innerWidth <= 600 && !menu.classList.contains('reduzido')) {
+        // Fecha o menu se estiver aberto
+        menu.classList.add('reduzido');
+        toggleButton.innerHTML = '▶';
+        toggleButton.style.marginLeft = '-30px';
+    }
+}
+
+// Adiciona um listener para verificar o tamanho da tela quando a janela for redimensionada
+window.addEventListener('resize', checkScreenWidth);
+
+// Chama a função quando a página carrega para verificar o tamanho inicial da tela
+window.addEventListener('load', checkScreenWidth);
+
+    </script>
   </body>
-  </html>
-  
+</html>

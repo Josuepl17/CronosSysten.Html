@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CronosSysten</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel="stylesheet" href="dashboard.css" />
+
+    <style>
+    :root {
+        --azul-escuro: #012841;
+        --azul-claro: #00657c;
+        --cinza-escuro: #212529;
+      }
+    
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-size: 13px;
+      }
+    
+      /* Estilos para #conteiner-geral */
+      #conteiner-geral {
+        background-color: rgb(185, 193, 201);
+        width: 100%;
+        height: 100vh;
+      }
+    
+      /* Estilos para #flex-1 */
+      #flex-1 {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+      }
+    
+      /* Estilos para #menu-geral */
+      #menu-geral {
+        width: 17%;
+        min-width: 200px;
+        height: 100vh;
+        background-color: var(--cinza-escuro);
+      }
+    
+      /* Estilos para #topo-menu */
+      #topo-menu {
+        width: 100%;
+        height: 08%;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--azul-claro);
+      }
+    
+      #topo-menu img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    
+      #topo-menu p {
+        color: white;
+      }
+    
+      /* Estilos para #links-menu */
+      #links-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 92%;
+        align-items: center;
+      }
+    
+      #links-menu a {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        padding: 10px;
+        color: aliceblue;
+        border-radius: 7px;
+        margin-bottom: 2px;
+      }
+
+    
+    
+      /* Estilos para #ajuste-2 */
+      #ajuste-2 {
+        width: 100%;
+        height: 100%;
+      }
+    
+      /* Estilos para nav */
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 08%;
+        background-color: white;
+      }
+
+      nav a{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+    
+
+    
+      /* Estilos para #ajuste-3 */
+      #ajuste-3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 92%;
+      }
+    
+      /* Estilos para #conteudo */
+      #conteudo {
+        border: 1px solid white;
+        width: 98%;
+        height: 95%;
+        border-radius: 5px;
+        background-color: white;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="conteiner-geral">
+      <div id="flex-1">
+        <div id="menu-geral">
+          <div id="topo-menu">
+            &nbsp;&nbsp;&nbsp;
+            <img src="profile.jpg" alt="" />
+            &nbsp;&nbsp;&nbsp;
+            <p>Josué Lima</p>
+          </div> <!-- topo-menu -->
+          
+          <div id="links-menu">
+            <a href="#">
+              <img width="10%" src="home.png" alt="">   &nbsp; Home
+            </a>
+
+            <a style="background-color: var(--azul-claro)" href="#">
+              <img width="10%" src="dashboard.png" alt="">  &nbsp;Dashbord
+            </a>
+
+            <a href="#">
+              <img width="10%" src="paciente.png" alt=""> &nbsp; Pacientes
+            </a>
+            
+            <a href="#">
+             <img width="10%" src="pesquisar.png" alt=""> &nbsp; Consultas
+            </a>
+  
+            <a href="#">
+              <img width="10%" src="agenda.png" alt=""> &nbsp; Agenda
+            </a>
+            <a href="#">
+              <img width="10%" src="medico.png" alt=""> &nbsp;  Medicos
+            </a>
+            <a href="#">
+              <img width="10%" src="logout.png" alt=""> &nbsp;  Sair
+            </a>
+          </div> <!-- links-menu -->
+        </div> <!-- menu-geral -->
+  
+        <div id="ajuste-2">
+          <nav>
+            <a href="#"><img style="width: 100%; height: auto;" src="sino.png" alt=""></a>
+            <a href="#"><img style="width: 100%; height: auto;" src="config.png" alt=""></a>
+        </nav>
+          <div id="ajuste-3">
+            <div id="conteudo">
+              <div id="conteudo-pessoal">
+                <div class="card">
+                  <span class="card-titulo"> <img width="8%" src="check.png" alt="">&nbsp; Consultas Marcadas</span>
+                  <span class="card-conteudo">10</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="usuario-ferido.png" alt="">&nbsp; Pacientes Ativos</span>
+                  <span class="card-conteudo">65</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="pendente.png" alt="">&nbsp; Exames Pendentes</span>
+                  <span class="card-conteudo">36</span>
+                </div> <!-- card -->
+  
+                <div class="card">
+                  <span class="card-titulo"><img width="8%" src="cancelado.png" alt="">&nbsp; Consultas Canceladas</span>
+                  <span class="card-conteudo">8</span>
+                </div> <!-- card -->
+              </div> <!-- conteudo-pessoal -->
+            </div> <!-- conteudo -->
+          </div> <!-- ajuste-3 -->
+        </div> <!-- ajuste-2 -->
+      </div> <!-- flex-1 -->
+    </div> <!-- conteiner-geral -->
+  </body>
+  </html>
+  
