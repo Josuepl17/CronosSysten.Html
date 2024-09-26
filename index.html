@@ -30,21 +30,18 @@
 
       #flex-1 {
         display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
       }
 
       /* Menu */
       #menu-geral {
-        width: 200px;
+        width: 230px;
         height: 100vh;
         background-color: var(--cinza-escuro);
         transition: width 0.3s ease;
 
       }
 
-      #menu-geral.reduzido {
+      #menu-geral.reduzido { /* Resposavel pelo tamanho do menu ao reduzi-lo */
         width: 60px;
       }
 
@@ -135,7 +132,7 @@
         margin-right: 10px;
       }
 
-      #ajuste-3 {
+      #ajuste-3 {  /* Feito apenas para diminuir as bordas do conteiner do conteudo */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -153,7 +150,7 @@
       }
 
 
-      .botao-menu {
+      .botao-menu { /* Botão que abre e fecha o menu */
         background-color: var(--azul-claro);
         color: white;
         border: none;
@@ -165,7 +162,9 @@
 
     </style>
 
-    <style>      .fomulario-usuario {
+    <style>      
+    
+    .fomulario-usuario {
       width: 100%;
       background: #fff;
       border-radius: 8px;
@@ -268,12 +267,9 @@
           </nav>
           <div id="ajuste-3">
             <div id="conteudo">
-              
+            
 
-
-
-
-
+    
 
               <div class="fomulario-usuario">
                 <form>
@@ -284,14 +280,14 @@
 
                     <div style="display: flex;" class="form-group">
 
-                      <div class="form-group-1">
+                      <div  class="form-group-1">
                         <label for="DataNascimento">Data Nascimento</label>
                         <input style="width: 150px; padding-right: 30px;" type="date" id="DataNascimento" placeholder="Data Nascimento">
                       </div>
                         
-                      <div style="margin-left: 10px;" class="form-group-1">
+                      <div class="form-group-1">
                         <label for="Medico">Medico Responsavel</label>
-                        <select style="width: 150px;" name="id" id="id">
+                        <select style="width: 170px;" name="id" id="id">
                           <option value="iu">Carlos (Pisicologo)</option>
                           <option value="iu">Mariana (Psiquiatra)</option>
                           <option value="iu">Marlon (Neurologista)</option>
