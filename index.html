@@ -358,18 +358,23 @@
     </div> <!-- conteiner-geral -->
 
     <script>
-function toggleMenu() {
+  function toggleMenu() {
     const menu = document.getElementById('menu-geral');
-    menu.classList.toggle('reduzido');
-
     const toggleButton = document.querySelector('.botao-menu');
+
+    menu.classList.toggle('reduzido');
     const isReduced = menu.classList.contains('reduzido');
 
     if (isReduced) {
         toggleButton.innerHTML = '▶';
         toggleButton.style.marginLeft = '-30px';
+        toggleButton.style.position = 'absolute';
+        toggleButton.style.zIndex = '999';
     } else {
         toggleButton.innerHTML = '☰';
+        toggleButton.style.position = 'relative'; // Para voltar à posição original
+        toggleButton.style.zIndex = 'auto'; // Para restaurar o comportamento padrão
+        toggleButton.style.marginLeft = '0'; // Centralizar o botão
     }
 }
 
@@ -395,3 +400,4 @@ window.addEventListener('load', checkScreenWidth);
     </script>
   </body>
 </html>
+
