@@ -114,9 +114,8 @@
 
       /* Conteúdo */
       #ajuste-2 {
-        width: 20%;
-        height: 100%;
         flex-grow: 1;
+        width: 80%;
         display: flex;
         flex-direction: column;
       }
@@ -217,7 +216,6 @@
       display: flex;
       justify-content: space-between;
     }
-
 
 
     </style>
@@ -351,23 +349,18 @@
     </div> <!-- conteiner-geral -->
 
     <script>
-  function toggleMenu() {
+function toggleMenu() {
     const menu = document.getElementById('menu-geral');
-    const toggleButton = document.querySelector('.botao-menu');
-
     menu.classList.toggle('reduzido');
+
+    const toggleButton = document.querySelector('.botao-menu');
     const isReduced = menu.classList.contains('reduzido');
 
     if (isReduced) {
         toggleButton.innerHTML = '▶';
         toggleButton.style.marginLeft = '-30px';
-        toggleButton.style.position = 'absolute';
-        toggleButton.style.zIndex = '999';
     } else {
         toggleButton.innerHTML = '☰';
-        toggleButton.style.position = 'relative'; // Para voltar à posição original
-        toggleButton.style.zIndex = 'auto'; // Para restaurar o comportamento padrão
-        toggleButton.style.marginLeft = '0'; // Centralizar o botão
     }
 }
 
@@ -393,4 +386,3 @@ window.addEventListener('load', checkScreenWidth);
     </script>
   </body>
 </html>
-
