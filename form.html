@@ -20,37 +20,47 @@
         box-sizing: border-box;
         text-decoration: none;
         font-size: 13px;
+        font-family: Arial, Helvetica, sans-serif;
       }
+
 
       #conteiner-geral {
         background-color: rgb(185, 193, 201);
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
       }
 
+
+                                            /* Primeiro Conteudo Menu e Barra de Navegação */
       #flex-1 {
         display: flex;
-        flex-direction: row;
         width: 100%;
         height: 100%;
       }
 
-      /* Menu */
-      #menu-geral {
-        width: 200px;
-        height: 100vh;
-        background-color: var(--cinza-escuro);
-        transition: width 0.3s ease;
+      .botao-menu { /* Botão que abre e fecha o menu */
+        background-color: var(--azul-claro);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
       }
 
-      #menu-geral.reduzido {
-        width: 60px;
+      
+      #menu-geral {
+        width: 14%;
+        height: 100%;
+        background-color: var(--cinza-escuro);
+        transition: width 0.5s ease; /* Tempo de abrir e fechar menu */
       }
 
       #topo-menu {
         display: flex;
         width: 100%;
         height: 08%;
+        min-height: 50px;
+        max-height: 60px;
         align-items: center;
         justify-content: space-between;
         padding: 10px;
@@ -70,11 +80,6 @@
         transition: opacity 0.3s ease;
       }
 
-      #menu-geral.reduzido #topo-menu p {
-        opacity: 0;
-        visibility: hidden;
-      }
-
       #links-menu {
         display: flex;
         flex-direction: column;
@@ -84,18 +89,18 @@
       #links-menu a {
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 10px; 
         color: aliceblue;
         border-radius: 7px;
         margin-bottom: 5px;
-        transition: background-color 0.2s;
       }
 
       #links-menu a:hover {
         background-color: var(--azul-claro);
+        transition: background-color 0.3s;
       }
 
-      .ajuste-icone {
+      #links-menu a img {
         width: 20px;
         height: 20px;
       }
@@ -105,14 +110,12 @@
         transition: opacity 0.3s ease;
       }
 
-      #menu-geral.reduzido #links-menu a span {
-        opacity: 0;
-        visibility: hidden;
-      }
 
-      /* Conteúdo */
+                                   /* Area Menu de navegação com Area Conteudo */
       #ajuste-2 {
         flex-grow: 1;
+        width: 85%;
+        height: 100%;
         display: flex;
         flex-direction: column;
       }
@@ -121,94 +124,70 @@
         display: flex;
         width: 100%;
         height: 08%;
+        max-height: 60px;
+        min-height: 50px;
         justify-content: flex-end;
         align-items: center;
         padding: 10px;
         background-color: white;
       }
 
-      #ajuste-3 {
+      nav a img{
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+
+      #ajuste-3 {  /* Feito apenas para diminuir as bordas do conteiner do conteudo */
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
+        height: 92%;
         flex-grow: 1;
       }
 
       #conteudo {
         display: flex;
         width: 98%;
-        height: 95%;
+        height: 94%;
         border-radius: 5px;
         background-color: white;
         padding: 20px;
+        overflow: hidden;
       }
 
 
-      .botao-menu {
-        background-color: var(--azul-claro);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 100;
+
+      @media (max-width: 1150px){
+        #menu-geral {
+        width: 20%;
+      }
+      }
+      
+
+      @media (max-width: 850px){
+        #menu-geral {
+        width: 30%;
+      }
       }
 
-      /* Estilos do formulário */
-      .fomulario-usuario {
-        width: 100%;
-        background: #fff;
-        border-radius: 8px;
-        padding: 20px;
+      @media (max-width: 650px){
+        #menu-geral {
+        width: 50%;
       }
 
-      .form-group {
-        margin-bottom: 10px;
+      p, span{
+        font-size: 12px;
+      }
       }
 
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
 
-      input[type="text"],
-      input[type="email"],
-      input[type="date"],
-      input[type="password"],
-      select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-      }
 
-      button {
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
 
-      button.salvar {
-        background-color: #4caf50;
-      }
-
-      button.fechar {
-        background-color: #9d9d9d;
-      }
-
-      .fechar-salvar {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .form-group-1 {
-        display: flex;
-        flex-direction: column;
-      }
     </style>
+
+    
   </head>
   <body>
     <div id="conteiner-geral">
@@ -218,73 +197,75 @@
         <div id="menu-geral">
           <div id="topo-menu">
             <div style="display: flex; flex-direction: row; align-items: center;" >
-              <img src="profile.jpg" alt="" />
-              <p>Josué Lima</p>
+              <img src="imagens/profile.jpg" alt="" />
+              <p>Josué</p>
             </div>
             <button class="botao-menu" onclick="toggleMenu()">☰</button>
           </div> <!-- topo-menu -->
 
           <div id="links-menu">
             <a href="#">
-              <img class="ajuste-icone" src="home.png" alt="" /> <span>Home</span>
+              <img  src="imagens/home.png" alt="" /> <span>Home</span>
             </a>
-            <a style="background-color: var(--azul-claro)" href="#">
-              <img class="ajuste-icone" src="dashboard.png" alt="" /> <span>Dashboard</span>
+            <a style="background-color: var(--azul-claro)" href="index.html">
+              <img  src="imagens/dashboard.png" alt="" /> <span>Dashboard</span>
             </a>
-            <a href="#">
-              <img class="ajuste-icone" src="paciente.png" alt="" /> <span>Pacientes</span>
+            <a href="form.html">
+              <img  src="imagens/paciente.png" alt="" /> <span>Pacientes</span>
             </a>
-            <a href="#">
-              <img class="ajuste-icone" src="pesquisar.png" alt="" /> <span>Consultas</span>
-            </a>
-            <a href="#">
-              <img class="ajuste-icone" src="agenda.png" alt="" /> <span>Agenda</span>
+            <a href="dados.html">
+              <img  src="imagens/pesquisar.png" alt="" /> <span>Consultas</span>
             </a>
             <a href="#">
-              <img class="ajuste-icone" src="medico.png" alt="" /> <span>Médicos</span>
+              <img  src="imagens/agenda.png" alt="" /> <span>Agenda</span>
             </a>
             <a href="#">
-              <img class="ajuste-icone" src="logout.png" alt="" /> <span>Sair</span>
+              <img  src="imagens/medico.png" alt="" /> <span>Médicos</span>
+            </a>
+            <a href="#">
+              <img  src="imagens/logout.png" alt="" /> <span>Sair</span>
             </a>
           </div> <!-- links-menu -->
         </div> <!-- menu-geral -->
 
         <div id="ajuste-2">
           <nav>
-            <a href="#"><img class="ajuste-icone" src="sino.png" alt="" /></a>
-            <a href="#"><img class="ajuste-icone" src="config.png" alt="" /></a>
+            <a href="#"><img  src="imagens/sino.png" alt="" /></a>
+            <a href="#"><img  src="imagens/config.png" alt="" /></a>
           </nav>
+
           <div id="ajuste-3">
             <div id="conteudo">
+      
+              
+
               <div class="fomulario-usuario">
                 <form>
                     <div class="form-group">
-                        <label for="name">Nome Completo</label>
+                       <label for="name">Nome Completo</label> 
                         <input type="text" id="name" placeholder="Nome Completo"  >
                     </div>
 
-                    <div style="display: flex;" class="form-group">
-
-                      <div class="form-group-1">
+                    <div  class="form-group">
                         <label for="DataNascimento">Data Nascimento</label>
-                        <input style="width: 150px; padding-right: 30px;" type="date" id="DataNascimento" placeholder="Data Nascimento">
-                      </div>
-                        
-                      <div style="margin-left: 10px;" class="form-group-1">
-                        <label for="Medico">Medico Responsavel</label>
-                        <select style="width: 150px;" name="id" id="id">
-                          <option value="iu">oi</option>
-                          <option value="iu">oi51451</option>
-                          <option value="iu">o5151i</option>
-                          <option value="iu">oi</option>
-                        </select>
-                      </div>
+                        <input type="date" id="DataNascimento" placeholder="Data Nascimento">
                   </div>   
 
+                  <div  class="form-group">
+                  <label for="Medico">Medico Responsavel</label>
+                  <select name="id" id="id">
+                    <option value="iu">Carlos (Pisicologo)</option>
+                    <option value="iu">Mariana (Psiquiatra)</option>
+                    <option value="iu">Marlon (Neurologista)</option>
+                    <option value="iu">Jessica (Pedriatra)</option>
+                  </select>
+                </div>  
+
                     <div class="form-group">
-                      <label for="email">CPF/RG</label>
-                      <input type="email" id="email" placeholder="CPF/RG">
+                      <label for="cpf">CPF/RG</label>
+                      <input type="number" id="cpf" placeholder="CPF/RG">
                   </div>
+
             
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -314,9 +295,14 @@
                     </div>
                 </form>
             </div>
+
+
+
             </div> <!-- conteudo -->
           </div> <!-- ajuste-3 -->
+
         </div> <!-- ajuste-2 -->
+
       </div> <!-- flex-1 -->
     </div> <!-- conteiner-geral -->
 
@@ -325,20 +311,88 @@ function toggleMenu() {
     const menu = document.getElementById('menu-geral');
     menu.classList.toggle('reduzido');
 
-    // Obtenha o botão de alternância
     const toggleButton = document.querySelector('.botao-menu');
-
-    // Verifique se o menu está reduzido
     const isReduced = menu.classList.contains('reduzido');
 
     if (isReduced) {
-        toggleButton.innerHTML = '▶'; // Muda o ícone do botão quando o menu está retraído
-        toggleButton.style.marginLeft = '-30px'; // Adiciona a margem direita
+        toggleButton.innerHTML = '☰';
+        toggleButton.style.marginLeft = '-45%';
     } else {
-        toggleButton.innerHTML = '☰'; // Restaura o ícone original quando o menu está expandido
-   
+        toggleButton.innerHTML = '☰';
     }
 }
+
     </script>
+
+    <style>
+         #menu-geral.reduzido {/* Resposavel pelo tamanho do menu ao reduzi-lo */           
+         width: 60px;
+          }
+
+          #menu-geral.reduzido #topo-menu p {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      #menu-geral.reduzido #links-menu a span {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+
+
   </body>
+
+  <style>      
+    
+    .fomulario-usuario {
+      width: 100%;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 1px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      
+    }
+
+    button {
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button.salvar {
+      background-color: #4caf50;
+    }
+
+    button.fechar {
+      background-color: #9d9d9d;
+    }
+
+    .fechar-salvar {
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+    </style>
 </html>
