@@ -5,38 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filial Gerenciador</title>
     <style>
-        * {
-          box-sizing: border-box;
-          padding: 0px;
-          margin: 0px;
-        }
+      * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+      }
 
-
-
-        #conteiner-geral {
-          width: 100%;
-          height: 100vh;
-          border: 2px solid black;
-        }
-
-        nav {
-          height: 05%;
-          border: 2px solid black;
-        }
-
-        #conteudo{
-          display: flex;
-          width: 98%;
-          height: 94%;
-          border-radius: 5px;
-          background-color: white;
-          padding: 20px;
-          overflow: hidden;
-        }
-        
-
-    #filial{
+      #conteiner-geral {
         width: 100%;
+        height: 100vh;
+        border: 2px solid black;
+      }
+
+      nav {
+        height: 05%;
+        border: 2px solid black;
+      }
+
+      #conteudo{
+        display: flex;io
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+        padding-top: 10px;
+      }
+
+      .filial {
+        width: 60%;
+        height: 60%;
+        padding: 20px;
+        overflow: auto;
+        border: 2px solid black;
+
+      }
+
+      #endereco {
+        width: 50%;
+      }
+
+      #pessoais {
+        padding-right: 20px;
+        width: 50%;
+      }
+
+      form {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
       }
 
       .form-group {
@@ -59,7 +75,6 @@
         padding: 10px;
         border-radius: 4px;
         border: 1px solid #ccc;
-
       }
 
       button {
@@ -82,7 +97,19 @@
         display: flex;
         justify-content: space-between;
       }
-        
+
+
+
+
+      #usuarios{
+        display: flex;
+        border: 1px solid black;
+        width: 35%;
+        height: 30%;
+
+      }
+
+
     </style>
   </head>
   <body>
@@ -91,70 +118,103 @@
 
       <div id="conteudo">
         <div class="filial">
-          <form>
-            <div class="form-group">
-              <label for="name">Nome Completo</label>
-              <input type="text" id="name" placeholder="Nome Completo" />
+          <form @submit.prevent="form.post('/create/atendentes')">
+            <div id="pessoais">
+              <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  v-model="form.nome"
+                  placeholder="Nome Completo"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF/RG</label>
+                <input
+                  v-model="form.cpf"
+                  type="text"
+                  id="cpf"
+                  placeholder="CPF/RG"
+                />
+                <p style="color: red; font-size: 13px" v-if="errors.cpf">
+                  {{ errors.cpf }}
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input
+                  v-model="form.telefone"
+                  type="text"
+                  id="telefone"
+                  placeholder="Telefone"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  v-model="form.email"
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                />
+                <p style="color: red; font-size: 13px" v-if="errors.email">
+                  {{ errors.email }}
+                </p>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="DataNascimento">Data Nascimento</label>
-              <input
-                type="date"
-                id="DataNascimento"
-                placeholder="Data Nascimento"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="Medico">Medico Responsavel</label>
-              <select name="id" id="id">
-                <option value="iu">Carlos (Pisicologo)</option>
-                <option value="iu">Mariana (Psiquiatra)</option>
-                <option value="iu">Marlon (Neurologista)</option>
-                <option value="iu">Jessica (Pedriatra)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="cpf">CPF/RG</label>
-              <input type="number" id="cpf" placeholder="CPF/RG" />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" placeholder="Email" />
-            </div>
-
-            <div class="form-group">
-              <label for="company">Cidade</label>
-              <input type="text" id="company" placeholder="Cidade" />
-            </div>
-
-            <div class="form-group">
-              <label for="bairro">Bairro</label>
-              <input type="text" id="bairro" placeholder="Bairro" />
-            </div>
-
-            <div class="form-group">
-              <label for="password">Senha Pessoal</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Senha Pessoal"
-              />
-            </div>
-
-            <div class="fechar-salvar">
-              <button type="button" class="fechar">Fechar</button>
-              <button type="submit" class="salvar">Salvar</button>
+            <div id="endereco">
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input
+                  v-model="form.endereco"
+                  type="text"
+                  id="endereco"
+                  placeholder="Endereço"
+                />
+              </div>
+              <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input
+                  v-model="form.cidade"
+                  type="text"
+                  id="cidade"
+                  placeholder="Cidade"
+                />
+              </div>
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input
+                  v-model="form.bairro"
+                  type="text"
+                  id="bairro"
+                  placeholder="Bairro"
+                />
+              </div>
+              <div class="form-group">
+                <label for="senha">Senha</label>
+                <input
+                  v-model="form.senha"
+                  type="text"
+                  id="senha"
+                  placeholder="Senha"
+                />
+              </div>
+              <div class="fechar-salvar">
+                <button type="button" class="fechar">Fechar</button>
+                <button type="submit" class="salvar">Salvar</button>
+              </div>
             </div>
           </form>
         </div>
+
+        <div id="usuarios">
+
+        </div>
       </div>
       <!-- conteudo -->
-
-      <div id="usuarios"></div>
     </div>
   </body>
 </html>
