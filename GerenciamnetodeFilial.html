@@ -12,15 +12,14 @@
       }
 
       :root {
-    --azul-escuro: #012841;
-    --azul-claro: #00657c;
-    --cinza-escuro: #212529;
-  }
+        --azul-escuro: #012841;
+        --azul-claro: #00657c;
+        --cinza-escuro: #212529;
+      }
 
       #conteiner-geral {
         width: 100%;
         height: 100vh;
-        border: 1px solid black;
       }
 
       nav {
@@ -28,12 +27,13 @@
         background-color: var(--azul-escuro);
       }
 
-      body{
+      body {
         background-color: #33333328;
       }
 
       #conteudo {
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
         height: 100%;
         justify-content: space-around;
@@ -42,6 +42,7 @@
 
       .filial {
         width: 60%;
+        min-width: 500px;
         height: 60%;
         padding: 20px;
         overflow: auto;
@@ -55,7 +56,7 @@
 
       #pessoais {
         padding-right: 20px;
-        
+
         width: 50%;
       }
 
@@ -273,6 +274,7 @@
       width: 25%;
       height: 30%;
       background: white;
+      min-width: 300px;
     }
 
     .checkbox {
