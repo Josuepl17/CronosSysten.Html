@@ -11,6 +11,12 @@
         margin: 0px;
       }
 
+      :root {
+    --azul-escuro: #012841;
+    --azul-claro: #00657c;
+    --cinza-escuro: #212529;
+  }
+
       #conteiner-geral {
         width: 100%;
         height: 100vh;
@@ -19,7 +25,11 @@
 
       nav {
         height: 05%;
-        border: 1px solid black;
+        background-color: var(--azul-escuro);
+      }
+
+      body{
+        background-color: #33333328;
       }
 
       #conteudo {
@@ -35,7 +45,8 @@
         height: 60%;
         padding: 20px;
         overflow: auto;
-        border: 1px solid black;
+        background-color: white;
+        border-radius: 04px;
       }
 
       #endereco {
@@ -44,6 +55,7 @@
 
       #pessoais {
         padding-right: 20px;
+        
         width: 50%;
       }
 
@@ -258,9 +270,9 @@
     #usuarios {
       display: flex;
       flex-direction: column;
-      border: 1px solid black;
       width: 25%;
       height: 30%;
+      background: white;
     }
 
     .checkbox {
